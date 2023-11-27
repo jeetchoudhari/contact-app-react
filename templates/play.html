@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlackJack Game</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #2C3E50;
+            color: #ECF0F1;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: #3498DB;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        h3 {
+            margin: 10px 0;
+            color: #ECF0F1;
+        }
+
+        h1 {
+            color: #3498DB;
+            margin-bottom: 20px;
+        }
+
+        label {
+            color: rgb(1, 15, 19);
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #3498DB;
+            border-radius: 5px;
+            width: 80%;
+            box-sizing: border-box;
+            color: #2C3E50;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #2980B9;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #3498DB;
+            color: #ECF0F1;
+            border: solid;
+            border-style: solid;
+            border-color: rgb(12, 1, 1);
+            border-radius: 5px;
+            border-width: thick;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #ebf703;
+            color: #000506;
+            border: ridge;
+        }
+    </style>
+</head>
+<body>
+    <form method="post" action="/draw">
+        <input type="hidden" name="player_sum" value="{{ player_sum }}">
+        <input type="hidden" name="computer_sum" value="{{ computer_sum }}">
+        
+        <input type="hidden" name="player_cards" value="{{ player_cards }}">
+        <input type="hidden" name="computer_cards" value="{{ computer_cards }}">
+        
+        <h3>Computer's cards: {{ computer_cards }}</h3>
+        <h3>Player's cards: {{ player_cards }}</h3>
+
+        <h3>Player's Total: {{ player_sum }}</h3>
+        <h3>Computer's Total: {{ computer_sum }}</h3>
+
+        <h1>Player, it's your turn to pick the cards</h1>
+
+        <label for="user_input">Enter "draw" to pick a card or "stop" to hold your sum:</label>
+        <input type="text" name="user_input" required>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

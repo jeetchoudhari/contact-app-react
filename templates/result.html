@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlackJack - Result</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #2C3E50;
+            color: #ECF0F1;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h2 {
+            color: #3498DB;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h5 {
+            margin: 5px 0;
+            color: #ECF0F1;
+        }
+
+        .cards-container {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+
+        .card {
+            width: 100px;
+            margin: 0 10px;
+            border-radius: 8px;
+        }
+
+        a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3498DB;
+            color: #ECF0F1;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            margin-top: auto; /* Push to the bottom */
+        }
+
+        a:hover {
+            background-color: #FFA500;
+        }
+    </style>
+</head>
+<body>
+    <h1>{{ result }}
+        <hr>
+    </h1>
+
+    <div class="cards-container">
+        <div>
+            <h5>Computer's cards:</h5>
+            {{ computer_cards }}
+            <!-- Add styling for computer cards if needed -->
+        </div>
+    </div>
+
+    <div class="cards-container">
+        <div>
+            <h5>Player's cards:</h5>
+            {{ player_cards }}
+            <!-- Add styling for player cards if needed -->
+        </div>
+    </div>
+
+    <h5>Player's Total: {{ player_sum }}</h5>
+    <h5>Computer's Total: {{ computer_sum }}</h5>
+
+    <a href="/">Back to Home</a>
+</body>
+</html>
